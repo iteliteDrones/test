@@ -1,0 +1,125 @@
+
+$background: rgba(246, 248, 251, 1);
+$content_text_margin_top: 30px;
+
+:host main{
+    font-family: Akshar;
+
+    ::ng-deep app-products {
+        width: 100%;
+        display: block;
+    }
+}
+
+footer{
+    padding: 32px 79px 32px 72px;
+    width: 100%;
+    min-height: 148px;
+    background-color: #000000;
+    color: white;
+
+    img{
+        height: min-content;
+        margin-right: 25px;
+    }
+
+    .socials{
+        width: fit-content;
+
+        .icons{
+            gap: 12px;
+            width: fit-content;
+        }
+
+        p{
+            font-size: 14px;
+            margin-top: 17px;
+        }
+        
+    }
+}
+
+
+
+@media (max-width: 1550px)
+{
+    nav{
+        
+        .nav-list{
+
+            ul{
+                gap: 60px;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 1300px)
+{
+    nav{
+        flex-direction: column;
+        padding-right: 0px;
+
+        img{
+            width: min-content;
+            margin: auto;
+            margin-left: auto !important;
+        }
+
+        .nav-list, .nav-list ul{
+
+            &::-webkit-scrollbar{
+                display: none;
+            }
+
+            overflow-x: auto;
+            overflow-y: hidden;
+            width: 100%;
+            justify-content: space-around;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+    }
+}
+
+@media(max-width: 850px)
+{
+    nav{
+
+        .logo{
+            width: 200px;
+        }
+        
+        .nav-list{
+            ul{
+                gap: 0px;
+            }
+        }
+    }
+
+    footer{
+        flex-direction: column;
+        align-items: center;
+
+        .logo{
+            margin-bottom: 50px;
+            margin-right: 0px;
+        }
+
+        .socials{
+            align-items: center !important;
+        }
+    }
+}
+
+@media(max-width: 650px)
+{
+    nav .logo{
+        margin-left: 10%;
+    }
+
+    footer{
+        padding: 32px 15px;
+    }
+}

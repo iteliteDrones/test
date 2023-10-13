@@ -1,0 +1,136 @@
+
+$background: rgba(246, 248, 251, 1);
+$content_text_margin_top: 30px;
+
+    :host .container-fluid:nth-of-type(1) ::ng-deep app-details .content .text{
+        margin-top: 60px;
+    }
+
+    section{
+        position: relative;
+        width: 77%;
+        margin: 29vh auto 0px auto;
+        padding-bottom: 90px;
+        min-height: calc(100vh - 40vh);
+
+        h1{
+            text-align: center;
+            font-size: 70px;
+        }
+
+        p{
+            margin-top: 30px;
+            font-size: 19px;
+            line-height: 32px;
+            min-height: 120px;
+
+            .machine_line{
+                font-size: 20px;
+                font-weight: 400;
+            }
+
+            .write_line{
+                animation: gleam .6s infinite;
+            }
+        }
+
+        .line{
+            position: absolute;
+            bottom: 45px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            display: block;
+            width: 117%;
+            height: 1px;
+            background-color: #9e9999;
+        }
+    }
+
+    #counter{
+        font-family: Akshar;
+        display: flex;
+        position: fixed;
+
+        z-index: 25;
+    
+        bottom: 7%;
+        right: 5%;
+    
+        flex-direction: column;
+        gap: 12px;
+
+        text-shadow: 
+        -1px -1px 0px #ffffff,
+         0px -1px 0px #ffffff,
+         1px -1px 0px #ffffff,
+        -1px  0px 0px #ffffff,
+         1px  0px 0px #ffffff,
+        -1px  1px 0px #ffffff,
+         0px  1px 0px #ffffff,
+         1px  1px 0px #ffffff;
+    
+        span{
+            font-size: 24px;
+            font-weight: 400;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            width: 29px;
+            text-align: inherit;
+
+            @for $i from 2 through 5{
+                .number:nth-of-type(#{$i})
+                {
+                    top: calc(($i - 2) * 30px );
+                }
+            }
+
+            .number{
+                position: absolute;
+                width: auto;     
+                transition: top .5s ease-in;           
+            }
+
+        }
+    
+        .line{
+            display: block;
+            width: 35px;
+            height: 2px;
+            background-color: #252525;
+            position: relative;
+            left: -6px;
+            box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
+        }
+    }
+
+@media(max-width: 800px)
+{
+    .container-fluid{
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    section{
+        min-height: 800px;
+
+        h1{
+            font-size: 60px;
+        }
+    }
+}
+
+@keyframes gleam {
+    0%{
+        opacity: 1;
+    }
+    57%{
+        opacity: 1;
+    }
+    58%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}

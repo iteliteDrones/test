@@ -1,0 +1,35 @@
+
+<nav class="nav flex justify-content-between">
+  <img class="logo" routerLink="/" src="./assets/images/logo.png" alt="logo">
+
+  <div #nav_list class="nav-list">
+    <ul>
+      <li routerLink="/" >Home</li>
+      <li routerLink="products" >Products</li>
+      <li routerLink="contact">Contact</li>
+      <li routerLink="news" >News</li>
+    </ul>
+
+  </div>
+
+  <div #bar_menu class="menu">
+    <mat-icon>menu</mat-icon>
+  </div>
+  
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="d-flex justify-content-between flex-wrap">
+  <img class="logo" src="./assets/logo/white_logo.png" alt="">
+  <div class="socials d-flex flex-column align-items-end">
+    <div class="icons d-flex">
+      <img src="./assets/images/socials_linkedin.png" alt="Linkedin">
+      <img src="./assets/images/socials_facebook.png" alt="Facebook">
+      <img src="./assets/images/socials_instagram.png" alt="Instagram">
+    </div>
+    <p>© 2023, Anti Drone Antenna Solutions. ITELITE all Rights Reserved.</p>
+  </div>
+</footer>

@@ -1,0 +1,6 @@
+<div class="container container-fluid">
+    <div *ngFor="let e of news" class="news">
+        <h3 class="title">{{e.title}}</h3> <span class="date">{{e.date}}</span>
+        <p #paragraph>{{paragraphText}}<span #line class="line"> |</span></p>
+    </div>
+</div>

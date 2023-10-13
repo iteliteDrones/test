@@ -1,0 +1,88 @@
+<h2 class="background_header">Antennas</h2>
+
+<div #content class="content content-{{details?.id + 1}}">
+
+  <div class="text">
+
+    <h3>
+      {{details?.value?.header}}
+    </h3>
+
+    <div class="describe">
+      <p>
+        {{details?.value?.paragraph}}
+      </p>
+      <button #learnMore>Learn More</button>
+    </div>
+
+  </div>
+
+  <div class="image">
+    <img src='{{imagesPath + details?.value?.img_num}}.webp' alt="Photo of antenna {{details?.value?.img_num}}">
+  </div>
+
+  <div *ngIf="properties" class="particular_details">
+
+    <div  class="properties description">
+      <h4>Description</h4>
+      <p>{{properties.description}}</p>
+    </div>
+
+    <div  class="properties specification">
+      <h4>Specification</h4>
+      <p>{{properties.specification}}</p>
+    </div>
+
+    <div  class="properties mechanical_properties">
+      
+      <h4>Mechanical Properties</h4>
+
+      <div>
+        Length: {{properties.mechanical_properties.length}}cm
+      </div>
+
+      <div *ngIf="isNumber(properties.mechanical_properties.width); else arr">
+        Width: {{properties.mechanical_properties.width}}cm
+      </div>
+      <ng-template #arr>
+        <div>Width_1: {{properties.mechanical_properties.width[0]}}cm</div>
+        <div>Width_2: {{properties.mechanical_properties.width[1]}}cm</div>
+
+      </ng-template>
+      
+      <div>
+        Weight: {{properties.mechanical_properties.weight}}kg
+      </div>
+
+      <div>
+        Color: {{properties.mechanical_properties.color}}
+      </div>
+
+      <div>
+        Material: {{properties.mechanical_properties.material}}
+      </div>
+
+    </div>
+
+    <div  class="properties charts">
+
+      <div>
+        <h4>{{properties.charts.header}}</h4>
+        <img src="{{properties.charts[0]}}.jpg" alt="">
+      </div>
+
+      <div *ngIf="properties.charts[1]">
+        <h4>{{properties.charts.header}}</h4>
+        <img src="{{properties.charts[1]}}.jpg" alt="">
+      </div>
+      
+    </div>
+
+    <mat-icon (click)="hideDetails()">close</mat-icon>
+
+  </div>
+
+</div>
+
+
+<span *ngIf="details?.id != 3" class="line"></span>

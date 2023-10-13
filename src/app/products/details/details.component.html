@@ -1,0 +1,80 @@
+<nav class="nav flex justify-content-between">
+  <img class="logo" routerLink="/" src="./assets/images/logo.png" alt="logo">
+
+  <div #nav_list class="nav-list">
+    <ul>
+      <li routerLink="/" >Home</li>
+      <li routerLink="products" >Products</li>
+      <li routerLink="contact">Contact</li>
+      <li routerLink="news" >News</li>
+    </ul>
+
+  </div>
+
+  <div #bar_menu class="menu">
+    <mat-icon>menu</mat-icon>
+  </div>
+  
+</nav>
+  <div class="content">
+      <div #detailsContainer *ngIf="detailsChild" class="particular_details">
+    
+            <div  class="properties description">
+              <h4>Description</h4>
+              <p>{{detailsChild.description}}</p>
+            </div>
+            
+            <div  class="properties specification">
+              <h4>Specification</h4>
+              <p>{{detailsChild.specification}}</p>
+            </div>
+          
+          
+      
+          <div  class="properties mechanical_properties">
+            <h4>Mechanical Properties</h4>
+
+            <div>
+              Length: {{detailsChild.mechanical_properties.length}}cm
+            </div>
+
+            <div *ngIf="isNumber(detailsChild.mechanical_properties.width); else arr">
+              Width: {{detailsChild.mechanical_properties.width}}cm
+            </div>
+            <ng-template #arr>
+              <div>Width_1: {{detailsChild.mechanical_properties.width[0]}}cm</div>
+              <div>Width_2: {{detailsChild.mechanical_properties.width[1]}}cm</div>
+            </ng-template>
+
+            <div>
+              Weight: {{detailsChild.mechanical_properties.weight}} kg
+            </div>
+
+            <div>
+              Color: {{detailsChild.mechanical_properties.color}}
+            </div>
+
+            <div>
+              Material: {{detailsChild.mechanical_properties.material}}
+            </div>
+          </div>
+          
+      
+          <div class="properties charts">
+      
+            <div>
+              <h4>{{detailsChild.charts.header}}</h4>
+              <img src="{{detailsChild.charts[0]}}.jpg" alt="">
+            </div>
+      
+            <div *ngIf="detailsChild.charts[1]">
+              <h4>{{detailsChild.charts.header}}</h4>
+              <img src="{{detailsChild.charts[1]}}.jpg" alt="">
+            </div>
+            
+          </div>
+      
+      </div>
+
+      <mat-icon (click)="hideDetails()">close</mat-icon>
+  </div>

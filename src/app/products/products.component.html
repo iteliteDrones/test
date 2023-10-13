@@ -1,0 +1,28 @@
+
+<app-details *ngIf="detailsParent" [detailsChild]="detailsParent" (toParent)="hideDetails()">
+</app-details>
+
+<div #products class="products d-flex flex-wrap justify-content-center">
+    <div class="product">
+        <div data-id="0" class="cover"></div>
+        <h3>ADAS 1.1 O</h3>
+        <img src="{{domesticPath}}/content_1.webp" alt="">
+    </div>
+    <div  class="product">
+        <div data-id="1" class="cover"></div>
+        <h3>ADAS 2.1 O</h3>
+        <img src="{{domesticPath}}/content_2.webp" alt="">
+    </div>
+    <div class="product">
+        <div data-id="2" class="cover"></div>
+        <h3>ADAS 1.1 D</h3>
+        <img src="{{domesticPath}}/content_3.webp" alt="">
+    </div>
+    <div class="product">
+        <div data-id="3" class="cover"></div>
+        <h3>ADAS 2.1 D</h3>
+        <img src="{{domesticPath}}/content_4.webp" alt="">
+    </div>
+
+    <button (click)="navigate()">Ask for availability</button>
+</div>

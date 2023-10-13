@@ -1,0 +1,27 @@
+  <section>
+    <h1>ANTI DRONE SOLUTIONS</h1>
+    <p>
+      <span class="machine_line">
+        
+      </span>
+      <span #write_line class="write_line"> |</span>
+    </p>
+
+    <span class="line"></span>
+  </section>
+  
+  <div (onResize)="handleResize($event)" *ngFor="let e of details; let i = index" class="container-fluid">
+    <app-details [details]="{value: e, id: i}"></app-details>
+  </div>
+
+  <div id="counter">
+    <span>
+       <span>0</span>
+       <span class="number">1</span>
+       <span class="number">2</span>
+       <span class="number">3</span>
+       <span class="number">4</span>
+    </span>
+    <span class="line"></span>
+    <span>04</span>
+  </div>
