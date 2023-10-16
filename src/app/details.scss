@@ -115,7 +115,21 @@ $content_text_margin_top: 30px;
 
         $top: 110;
 
-        .properties{
+        .box{   
+            .desc{
+                min-width: 570px;
+            }
+
+            .antenna_image{
+                width: 630px;
+                img{
+                    width: 950px;
+                    transform: translate(-10%);
+                }
+            }
+        }
+
+        .properties, .box .properties{
 
             width: 100%;
             margin-bottom: 95px;
@@ -155,7 +169,6 @@ $content_text_margin_top: 30px;
         .properties:last-of-type{
             border: none;
         }
-
         .line_properties{
             display: block;
             width: 100%;
@@ -259,6 +272,14 @@ $img_sizes: 785px 452px, 770px 330px 670px 290px;
 }
 
 @media (max-width: 1300px) {
+    .nav{
+        padding-right: 0px;
+
+        .logo{
+            margin-left: unset;
+            margin: auto;
+        }
+    }
 
     .background_header {
         font-size: 300px;
@@ -291,6 +312,19 @@ $img_sizes: 785px 452px, 770px 330px 670px 290px;
         gap: 0px !important;
 
         padding-right: 20px;
+
+        .box{
+            .desc{
+                min-width: unset !important;
+            }
+            .antenna_image{
+                width: 90vw !important;
+                img{
+                    width: 115vw !important;
+                    transform: translate(0);
+                }
+            }
+        }
 
         .text {
             h3 {

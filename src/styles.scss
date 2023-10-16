@@ -46,7 +46,11 @@ $anti-drone-theme: mat.define-light-theme((
 }
 
 html, body { height: 100%; overflow-x: hidden;}
-body { font-family: Roboto, "Helvetica Neue", sans-serif; background-color: $background;}
+body { 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  background-color: $background;
+  font-display: swap;
+}
 
 nav{
 
@@ -132,7 +136,7 @@ nav{
 
   &:nth-of-type(1)
   {
-      min-height: calc(100vh - (43.5px + 79px));
+    min-height: calc(100vh - (43.5px + 79px));
   }
 
 }

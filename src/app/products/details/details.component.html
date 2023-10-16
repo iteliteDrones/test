@@ -8,7 +8,6 @@
       <li routerLink="contact">Contact</li>
       <li routerLink="news" >News</li>
     </ul>
-
   </div>
 
   <div #bar_menu class="menu">
@@ -19,17 +18,23 @@
   <div class="content">
       <div #detailsContainer *ngIf="detailsChild" class="particular_details">
     
-            <div  class="properties description">
-              <h4>Description</h4>
-              <p>{{detailsChild.description}}</p>
+          <div class="box d-flex flex-wrap">
+            <div class="desc col-lg">
+              <div  class="properties description">
+                <h4>Description</h4>
+                <p>{{detailsChild.description}}</p>
+              </div>
+              
+              <div  class="properties specification">
+                <h4>Specification</h4>
+                <p>{{detailsChild.specification}}</p>
+              </div>
             </div>
             
-            <div  class="properties specification">
-              <h4>Specification</h4>
-              <p>{{detailsChild.specification}}</p>
+            <div class="antenna_image">
+              <img src="./assets/images/home/content/content_{{detailsChild.id}}.webp" alt="">
             </div>
-          
-          
+          </div>
       
           <div  class="properties mechanical_properties">
             <h4>Mechanical Properties</h4>
@@ -75,6 +80,6 @@
           </div>
       
       </div>
-
+      <br>
       <mat-icon (click)="hideDetails()">close</mat-icon>
   </div>

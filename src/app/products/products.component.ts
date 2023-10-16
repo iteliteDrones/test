@@ -3,6 +3,7 @@ import { imagesPath } from '../path';
 
 import { Router } from '@angular/router';
 import { data } from '../home/details/paticularDetails';
+
 import { particularDetails } from '../home/detailsTypes';
 
 @Component({
@@ -34,7 +35,7 @@ export class ProductsComponent implements AfterViewInit{
       const id = e.target.getAttribute("data-id");
 
       const newData = Object.assign({}, data[`${id}`]);
-      newData.id = id;
+      newData.id = Number(id) + 1;
 
       this.detailsParent = newData;
     }
